@@ -1,0 +1,1 @@
+# legionpro27ud10HDRReset
