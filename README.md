@@ -2,7 +2,7 @@
 
 一个通过 DDC/CI 刷新显示器 HDR 状态的 Windows 小工具。
 
-本程序主要针对 **Lenovo Legion Pro 27UD-10 QD-OLED** 开发和测试。
+本程序专门针对 **Lenovo Legion Pro 27UD-10 QD-OLED** 开发和测试。
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## 功能
 
-HDRReset 通过显示器的 DDC/CI 接口向显示器发送 HDR 指令，用于刷新显示器的 HDR 状态。
+HDRReset 通过显示器的 DDC/CI 接口向 **Lenovo Legion Pro 27UD-10 QD-OLED** 发送 HDR 指令，用于刷新显示器的 HDR 状态。
 
 - 程序启动后立即刷新一次 HDR
 - 每 30 分钟自动刷新一次 HDR
@@ -47,21 +47,23 @@ HDRReset 通过显示器的 DDC/CI 接口向显示器发送 HDR 指令，用于�
 
 手动刷新后，30 分钟计时会重新开始。
 
-## 已测试设备
+## 适用设备
 
 **Lenovo Legion Pro 27UD-10 QD-OLED**
 
-本程序使用显示器的 DDC/CI 接口，因此其他支持相应 DDC/CI 指令的显示器理论上也可能兼容，但未经测试。
+本程序目前仅针对 **Lenovo Legion Pro 27UD-10 QD-OLED** 开发和测试。
+
+程序使用该显示器特定的 DDC/CI 指令。其他显示器型号的 DDC/CI 实现和 VCP 指令可能不同，因此本程序不声称兼容其他型号。
 
 ## DDC/CI 指令
 
-程序发送：
+程序向显示器发送：
 
 VCP Code: `0xEF`
 
 Value: `0x09`
 
-对应显示器的 **HDR Photo** 模式。
+对应 **HDR Photo** 模式。
 
 程序直接通过 DDC/CI 与物理显示器通信，而不是修改 Windows 的 HDR 设置。
 
@@ -69,7 +71,8 @@ Value: `0x09`
 
 - Windows 10 / Windows 11
 - x64 系统
-- 显示器支持 DDC/CI
+- Lenovo Legion Pro 27UD-10 QD-OLED
+- 显示器需要启用 DDC/CI
 
 ## 安装
 
@@ -85,27 +88,15 @@ Value: `0x09`
 
 安装脚本会创建桌面快捷方式并设置 Windows 启动项。
 
-## 兼容性
-
-本程序主要针对：
-
-**Lenovo Legion Pro 27UD-10 QD-OLED**
-
-进行开发和测试。
-
-其他显示器是否兼容取决于其 DDC/CI 实现以及对相关 VCP 指令的支持情况。
-
 ## 注意事项
 
-本程序通过 DDC/CI 向显示器发送控制指令。
+本程序使用的是 **Lenovo Legion Pro 27UD-10 QD-OLED 的特定 DDC/CI 指令**。
 
-不同显示器对 DDC/CI 指令的支持可能不同。
+其他显示器型号可能使用不同的 VCP Code、Value 或其他控制方式，因此：
 
-如果你的显示器不支持：
+**请不要直接将本程序用于其他显示器，并假定其具有相同功能。**
 
-`VCP 0xEF / Value 0x09`
-
-则本程序可能无法正常工作。
+如果你使用的不是 Lenovo Legion Pro 27UD-10 QD-OLED，本项目不保证能够正常工作。
 
 ---
 
@@ -113,7 +104,7 @@ Value: `0x09`
 
 ## Features
 
-HDRReset is a small Windows utility that uses DDC/CI to send an HDR command to a monitor and refresh its HDR state.
+HDRReset is a small Windows utility developed specifically to refresh the HDR state of the **Lenovo Legion Pro 27UD-10 QD-OLED** through DDC/CI.
 
 - Refreshes HDR once when the program starts
 - Automatically refreshes HDR every 30 minutes
@@ -150,11 +141,13 @@ You can also manually refresh HDR by:
 
 A manual refresh restarts the 30-minute timer.
 
-## Tested Device
+## Supported Device
 
 **Lenovo Legion Pro 27UD-10 QD-OLED**
 
-The utility uses the monitor's DDC/CI interface. Other monitors may or may not be compatible.
+This utility was specifically developed and tested for the **Lenovo Legion Pro 27UD-10 QD-OLED**.
+
+The program uses DDC/CI commands specific to this monitor. Other monitor models may use different DDC/CI implementations and VCP commands, so compatibility with other models is not claimed.
 
 ## DDC/CI Command
 
@@ -172,7 +165,8 @@ The program communicates directly with the physical monitor through DDC/CI rathe
 
 - Windows 10 / Windows 11
 - x64 system
-- A monitor with DDC/CI support
+- Lenovo Legion Pro 27UD-10 QD-OLED
+- DDC/CI enabled on the monitor
 
 ## Installation
 
@@ -188,22 +182,12 @@ If you want the program to start automatically with Windows, run:
 
 The installation script creates a desktop shortcut and adds the program to Windows startup.
 
-## Compatibility
-
-This utility was primarily developed and tested with:
-
-**Lenovo Legion Pro 27UD-10 QD-OLED**
-
-Compatibility with other monitors depends on their DDC/CI implementation and support for the relevant VCP command.
-
 ## Notes
 
-This utility sends control commands to the monitor through DDC/CI.
+This utility uses **DDC/CI commands specific to the Lenovo Legion Pro 27UD-10 QD-OLED**.
 
-DDC/CI support varies between monitors.
+Other monitor models may use different VCP codes, values, or control mechanisms.
 
-If your monitor does not support:
+**Do not assume that this utility is compatible with other monitor models.**
 
-`VCP 0xEF / Value 0x09`
-
-the utility may not work correctly.
+If you are not using a Lenovo Legion Pro 27UD-10 QD-OLED, this project does not guarantee that the utility will work correctly.
