@@ -21,7 +21,7 @@ HDRReset 不会关闭或重新开启 Windows HDR，也不会修改显示器亮�
 
 ## 下载
 
-[下载 HDRReset.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.0.0/HDRReset.zip)
+[下载 HDRReset.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/latest/download/HDRReset.zip)
 
 ---
 
@@ -144,7 +144,7 @@ This method was developed and tested specifically for the **Lenovo Legion Pro 27
 
 ## Download
 
-[Download HDRReset.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.0.0/HDRReset.zip)
+[Download HDRReset.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/latest/download/HDRReset.zip)
 
 ---
 
