@@ -12,8 +12,6 @@
 
 ---
 
-# 中文
-
 ## 项目简介
 
 部分 **Lenovo Legion Pro 27UD-10 QD-OLED** 用户可能会遇到这样的问题：
@@ -130,8 +128,6 @@ Value: `0x09`
 如果你使用的不是 Lenovo Legion Pro 27UD-10 QD-OLED，本项目不保证程序能够正常工作。
 
 ---
-
-# English
 
 ## Introduction
 
