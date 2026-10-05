@@ -22,47 +22,69 @@ HDRReset 不修改 Windows 的 HDR 设置，而是直接通过显示器的 DDC/C
 
 ## 功能
 
-- 程序启动后立即刷新一次 HDR
-- 每 30 分钟自动刷新一次 HDR
-- 按数字键 `1` 可以立即刷新 HDR，并重新开始 30 分钟计时
-- 支持系统托盘运行
-- 托盘右键菜单可以执行「刷新HDR」
-- 主界面提供「刷新HDR」按钮
-- 单文件运行，无需安装 .NET Runtime
+* 程序启动后立即刷新一次 HDR
+* 每 30 分钟自动刷新一次 HDR
+* 按数字键 `1` 可以立即刷新 HDR，并重新开始 30 分钟计时
+* 程序默认在系统托盘后台运行
+* 左键点击托盘图标可以打开主窗口
+* 托盘右键菜单可以执行「刷新HDR」
+* 主界面提供「刷新HDR」按钮
+* 单文件运行，无需安装 .NET Runtime
 
 ## 下载
 
 前往 [Releases](../../releases) 下载最新版本。
 
-下载发布页面中的 ZIP 压缩包并解压即可。
+下载发布页面中的 ZIP 压缩包并解压。
 
-## 使用方法
+## 安装与使用
 
-解压 ZIP 文件后，运行：
-
-`HDRReset.exe`
-
-程序启动后会立即执行一次 HDR 刷新，然后每 30 分钟自动刷新一次。
-
-也可以通过以下方式手动刷新：
-
-- 点击主界面的「刷新HDR」
-- 按数字键 `1`
-- 右键点击系统托盘图标 → 「刷新HDR」
-
-手动刷新后，30 分钟计时会重新开始。
-
-## 安装
-
-本程序不需要传统意义上的安装程序。
-
-直接运行：
+**解压 ZIP 压缩包后，只需要运行：**
 
 `Install.bat`
 
-即可完成程序的安装和自动启动配置。
+无需手动运行 `HDRReset.exe`。
 
-完成后程序会按照安装脚本中的设置运行，无需手动配置。
+运行 `Install.bat` 后，安装脚本会自动：
+
+1. 创建程序的开机启动项
+2. 立即运行 HDRReset
+
+程序启动后会**自动最小化到系统托盘，不会显示主窗口**。
+
+正常运行时，HDRReset 会在后台自动工作：
+
+* 启动后立即执行一次 HDR 刷新
+* 每 30 分钟自动刷新一次 HDR
+* 按数字键 `1` 可以立即刷新 HDR，并重新开始 30 分钟计时
+
+如果需要打开主窗口：
+
+**左键点击系统托盘中的 HDRReset 图标即可。**
+
+也可以通过托盘图标的右键菜单执行「刷新HDR」。
+
+### 重要提示
+
+**安装后，请不要移动或删除解压出来的 HDRReset 文件夹。**
+
+程序的开机启动配置指向该文件夹中的程序文件，因此需要保持该文件夹及其内部文件的位置不变。
+
+如果需要卸载 HDRReset：
+
+1. 删除系统中的 HDRReset 开机启动项（如果安装脚本提供了对应的卸载处理）
+2. 退出 HDRReset
+3. **直接删除整个 HDRReset 文件夹即可**
+
+## 系统托盘
+
+HDRReset 安装并运行后默认不会显示主窗口，而是在系统托盘后台运行。
+
+可以通过以下方式操作程序：
+
+* **左键点击托盘图标** → 打开主窗口
+* **右键点击托盘图标** → 打开托盘菜单
+* **托盘菜单 → 刷新HDR** → 立即执行 HDR 刷新
 
 ## 适用设备
 
@@ -88,10 +110,10 @@ Value: `0x09`
 
 ## 系统要求
 
-- Windows 10 / Windows 11
-- x64 系统
-- Lenovo Legion Pro 27UD-10 QD-OLED
-- 显示器启用 DDC/CI
+* Windows 10 / Windows 11
+* x64 系统
+* Lenovo Legion Pro 27UD-10 QD-OLED
+* 显示器启用 DDC/CI
 
 ## 注意事项
 
@@ -125,13 +147,14 @@ The program is primarily intended for the **Lenovo Legion Pro 27UD-10 QD-OLED**.
 
 ## Features
 
-- Refreshes HDR once when the program starts
-- Automatically refreshes HDR every 30 minutes
-- Press `1` to refresh HDR immediately and restart the 30-minute timer
-- Supports running in the system tray
-- Right-click the tray icon to select `刷新HDR`
-- Provides a `刷新HDR` button in the main window
-- Single-file executable, no .NET Runtime installation required
+* Refreshes HDR once when the program starts
+* Automatically refreshes HDR every 30 minutes
+* Press `1` to refresh HDR immediately and restart the 30-minute timer
+* Runs in the system tray by default
+* Left-click the tray icon to open the main window
+* Right-click the tray icon to access the `Refresh HDR` option
+* Provides a `Refresh HDR` button in the main window
+* Single-file executable, no .NET Runtime installation required
 
 ## Download
 
@@ -139,33 +162,54 @@ Go to [Releases](../../releases) and download the latest version.
 
 Download and extract the ZIP package.
 
-## Usage
+## Installation and Usage
 
-Run:
-
-`HDRReset.exe`
-
-The program immediately performs an HDR refresh when started, then automatically refreshes HDR every 30 minutes.
-
-You can also manually refresh HDR by:
-
-- Clicking `刷新HDR` in the main window
-- Pressing the `1` key
-- Right-clicking the system tray icon and selecting `刷新HDR`
-
-A manual refresh restarts the 30-minute timer.
-
-## Installation
-
-This program does not require a traditional installer.
-
-Simply run:
+**After extracting the ZIP package, simply run:**
 
 `Install.bat`
 
-The batch file performs the required installation and startup configuration automatically.
+There is no need to run `HDRReset.exe` manually.
 
-No additional manual configuration is required.
+When `Install.bat` is executed, it will automatically:
+
+1. Create a startup entry for HDRReset
+2. Launch HDRReset immediately
+
+After launching, HDRReset will **automatically minimize to the system tray without displaying the main window**.
+
+Once running in the background, HDRReset will:
+
+* Perform an HDR refresh immediately after startup
+* Automatically refresh HDR every 30 minutes
+* Refresh HDR immediately and restart the 30-minute timer when `1` is pressed
+
+To open the main window:
+
+**Left-click the HDRReset icon in the system tray.**
+
+You can also right-click the tray icon to access the `Refresh HDR` option.
+
+### Important
+
+**After installation, do not move or delete the extracted HDRReset folder.**
+
+The Windows startup configuration points to the program files inside this folder, so the folder and its contents must remain in their original location.
+
+To uninstall HDRReset:
+
+1. Remove the HDRReset startup entry from Windows, if applicable
+2. Exit HDRReset
+3. **Simply delete the entire HDRReset folder**
+
+## System Tray
+
+After installation, HDRReset runs in the background in the system tray instead of displaying the main window.
+
+You can control the program as follows:
+
+* **Left-click the tray icon** → Open the main window
+* **Right-click the tray icon** → Open the tray menu
+* **Tray menu → Refresh HDR** → Immediately refresh HDR
 
 ## Supported Device
 
@@ -191,10 +235,10 @@ The program communicates directly with the physical monitor through DDC/CI rathe
 
 ## Requirements
 
-- Windows 10 / Windows 11
-- x64 system
-- Lenovo Legion Pro 27UD-10 QD-OLED
-- DDC/CI enabled on the monitor
+* Windows 10 / Windows 11
+* x64 system
+* Lenovo Legion Pro 27UD-10 QD-OLED
+* DDC/CI enabled on the monitor
 
 ## Notes
 
