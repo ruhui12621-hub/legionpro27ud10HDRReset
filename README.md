@@ -59,7 +59,7 @@ HDRReset 不修改 Windows 的 HDR 设置，而是直接通过显示器的 DDC/C
 如果需要打开主窗口：
 
 **左键点击系统托盘中的 HDRReset 图标即可。**
-<img width="1478" height="1040" alt="image" src="https://github.com/user-attachments/assets/2b67d5e3-7b4f-4fc8-ac1e-6fa47e4b1f98" />
+<img width="1478" height="1040" alt="image" src="https://github.com/user-attachments/assets/b196aff3-7938-4b91-a59b-59be4d003b30" />
 
 也可以通过托盘图标的右键菜单执行「刷新HDR」。
 
