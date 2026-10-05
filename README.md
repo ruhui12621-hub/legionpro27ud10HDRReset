@@ -36,12 +36,6 @@ HDRReset 不修改 Windows 的 HDR 设置，而是直接通过显示器的 DDC/C
 * 主界面提供「刷新HDR」按钮
 * 单文件运行，无需安装 .NET Runtime
 
-## 下载
-
-前往 [Releases](../../releases) 下载最新版本。
-
-下载发布页面中的 ZIP 压缩包并解压。
-
 ## 安装与使用
 
 **解压 ZIP 压缩包后，只需要运行：**
@@ -160,12 +154,6 @@ The program is primarily intended for the **Lenovo Legion Pro 27UD-10 QD-OLED**.
 * Right-click the tray icon to access the `Refresh HDR` option
 * Provides a `Refresh HDR` button in the main window
 * Single-file executable, no .NET Runtime installation required
-
-## Download
-
-Go to [Releases](../../releases) and download the latest version.
-
-Download and extract the ZIP package.
 
 ## Installation and Usage
 
