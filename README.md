@@ -6,9 +6,11 @@
 
 ## 下载
 
-**[⬇️ 下载最新版本](../../releases/latest)**
+[下载 HDRReset.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.0.0/HDRReset.zip)
 
-下载 ZIP 压缩包并解压，然后运行 `Install.bat`。
+适用于 Lenovo Legion Pro 27UD-10 QD-OLED。
+
+下载后解压即可使用。
 
 ---
 
@@ -145,9 +147,11 @@ The program is primarily intended for the **Lenovo Legion Pro 27UD-10 QD-OLED**.
 
 ## Download
 
-**[⬇️ Download the latest version](../../releases/latest)**
+[Download HDRReset.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.0.0/HDRReset.zip)
 
-Download and extract the ZIP package, then run `Install.bat`.
+For Lenovo Legion Pro 27UD-10 QD-OLED.
+
+Download and extract the ZIP package to use HDRReset.
 
 ## Features
 
