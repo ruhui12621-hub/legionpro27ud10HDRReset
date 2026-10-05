@@ -1,13 +1,14 @@
-## 下载
-
-**[⬇️ 下载最新版本](../../releases/latest)**
-
-下载 ZIP 后解压，运行 `Install.bat` 即可。
 # HDRReset
 
 一个专门用于解决 **Lenovo Legion Pro 27UD-10 QD-OLED** 在使用过程中出现画面亮度异常变暗问题的 Windows 小工具。
 
 本程序通过 DDC/CI 向显示器重新发送 HDR Photo 指令，从而刷新显示器的 HDR 状态。
+
+## 下载
+
+**[⬇️ 下载最新版本](../../releases/latest)**
+
+下载 ZIP 压缩包并解压，然后运行 `Install.bat`。
 
 ---
 
@@ -71,9 +72,9 @@ HDRReset 不修改 Windows 的 HDR 设置，而是直接通过显示器的 DDC/C
 
 如果需要卸载 HDRReset：
 
-1. 删除系统中的 HDRReset 开机启动项（如果安装脚本提供了对应的卸载处理）
-2. 退出 HDRReset
-3. **直接删除整个 HDRReset 文件夹即可**
+退出程序后，**直接删除整个 HDRReset 文件夹即可**。
+
+如果 Windows 中仍然存在 HDRReset 的开机启动项，可以根据需要手动将其删除。
 
 ## 系统托盘
 
@@ -144,6 +145,12 @@ Instead of changing the Windows HDR settings, HDRReset communicates directly wit
 
 The program is primarily intended for the **Lenovo Legion Pro 27UD-10 QD-OLED**.
 
+## Download
+
+**[⬇️ Download the latest version](../../releases/latest)**
+
+Download and extract the ZIP package, then run `Install.bat`.
+
 ## Features
 
 * Refreshes HDR once when the program starts
@@ -190,9 +197,9 @@ The Windows startup configuration points to the program files inside this folder
 
 To uninstall HDRReset:
 
-1. Remove the HDRReset startup entry from Windows, if applicable
-2. Exit HDRReset
-3. **Simply delete the entire HDRReset folder**
+After exiting the program, **simply delete the entire HDRReset folder**.
+
+If the HDRReset startup entry still exists in Windows, you can remove it manually if desired.
 
 ## System Tray
 
