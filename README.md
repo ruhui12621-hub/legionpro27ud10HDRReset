@@ -1,8 +1,14 @@
+<!-- README verification: 2026-10-05 21:04:16 -->
 # HDRReset
 
 一个专门用于解决 **Lenovo Legion Pro 27UD-10 QD-OLED** 在使用过程中出现画面亮度异常变暗问题的 Windows 小工具。
 
-本程序通过 DDC/CI 向显示器重新发送 HDR Photo 指令，从而刷新显示器的 HDR 状态。
+本程序不会关闭或重新开启 Windows HDR，也不会修改显示器亮度设置。
+它只是重新向显示器发送一次 HDR Photo 模式的 DDC/CI 指令。
+
+## 解决的问题
+部分 Lenovo Legion Pro 27UD-10 QD-OLED 用户可能会遇到：
+显示器在 HDR 模式下正常使用一段时间后，画面会明显变暗
 
 ## 下载
 
@@ -74,16 +80,6 @@ HDRReset 不修改 Windows 的 HDR 设置，而是直接通过显示器的 DDC/C
 退出程序后，**直接删除整个 HDRReset 文件夹即可**。
 
 如果 Windows 中仍然存在 HDRReset 的开机启动项，可以根据需要手动将其删除。
-
-## 系统托盘
-
-HDRReset 安装并运行后默认不会显示主窗口，而是在系统托盘后台运行。
-
-可以通过以下方式操作程序：
-
-* **左键点击托盘图标** → 打开主窗口
-* **右键点击托盘图标** → 打开托盘菜单
-* **托盘菜单 → 刷新HDR** → 立即执行 HDR 刷新
 
 ## 适用设备
 
@@ -196,16 +192,6 @@ After exiting the program, **simply delete the entire HDRReset folder**.
 
 If the HDRReset startup entry still exists in Windows, you can remove it manually if desired.
 
-## System Tray
-
-After installation, HDRReset runs in the background in the system tray instead of displaying the main window.
-
-You can control the program as follows:
-
-* **Left-click the tray icon** → Open the main window
-* **Right-click the tray icon** → Open the tray menu
-* **Tray menu → Refresh HDR** → Immediately refresh HDR
-
 ## Supported Device
 
 **Lenovo Legion Pro 27UD-10 QD-OLED**
@@ -248,7 +234,3 @@ Other monitor models may use different VCP codes, values, or control mechanisms.
 **Do not assume that this utility is compatible with other monitor models.**
 
 If you are not using a Lenovo Legion Pro 27UD-10 QD-OLED, this project does not guarantee that the utility will work correctly.
-
-
-
-2026-10-05 20:45:28
