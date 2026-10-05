@@ -1,3 +1,8 @@
+## 下载
+
+**[⬇️ 下载最新版本](../../releases/latest)**
+
+下载 ZIP 后解压，运行 `Install.bat` 即可。
 # HDRReset
 
 一个专门用于解决 **Lenovo Legion Pro 27UD-10 QD-OLED** 在使用过程中出现画面亮度异常变暗问题的 Windows 小工具。
