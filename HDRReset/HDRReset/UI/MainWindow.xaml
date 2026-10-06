@@ -1,0 +1,858 @@
+<Window x:Class="HDRReset.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource WindowTitle}"
+        Width="1000"
+        Height="620"
+        MinWidth="900"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen"
+        Background="Black"
+        Foreground="White"
+        FontFamily="Microsoft YaHei UI"
+        ShowInTaskbar="True"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True"
+        KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+
+        <!-- ===================================================== -->
+        <!-- 语言选择框 -->
+        <!-- ===================================================== -->
+
+        <Style x:Key="LanguageComboBoxStyle"
+               TargetType="ComboBox">
+
+            <Setter Property="Background"
+                    Value="#242424"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="BorderBrush"
+                    Value="#555555"/>
+
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+
+            <Setter Property="FontSize"
+                    Value="15"/>
+
+            <Setter Property="FontWeight"
+                    Value="Normal"/>
+
+            <Setter Property="Padding"
+                    Value="8,0"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Left"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
+            <!-- ================================================= -->
+            <!-- 下拉项目样式 -->
+            <!-- ================================================= -->
+
+            <Setter Property="ItemContainerStyle">
+
+                <Setter.Value>
+
+                    <Style TargetType="ComboBoxItem">
+
+                        <Setter Property="Background"
+                                Value="#242424"/>
+
+                        <Setter Property="Foreground"
+                                Value="White"/>
+
+                        <Setter Property="FontSize"
+                                Value="15"/>
+
+                        <Setter Property="Height"
+                                Value="36"/>
+
+                        <Setter Property="Padding"
+                                Value="8,0"/>
+
+                        <Setter Property="HorizontalContentAlignment"
+                                Value="Left"/>
+
+                        <Setter Property="VerticalContentAlignment"
+                                Value="Center"/>
+
+                        <Setter Property="Template">
+
+                            <Setter.Value>
+
+                                <ControlTemplate TargetType="ComboBoxItem">
+
+                                    <Border
+                                        x:Name="ItemBorder"
+                                        Background="{TemplateBinding Background}"
+                                        Padding="{TemplateBinding Padding}">
+
+                                        <ContentPresenter
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{TemplateBinding Content}"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                                    </Border>
+
+                                    <ControlTemplate.Triggers>
+
+                                        <Trigger Property="IsMouseOver"
+                                                 Value="True">
+
+                                            <Setter TargetName="ItemBorder"
+                                                    Property="Background"
+                                                    Value="#363636"/>
+
+                                        </Trigger>
+
+                                        <Trigger Property="IsSelected"
+                                                 Value="True">
+
+                                            <Setter TargetName="ItemBorder"
+                                                    Property="Background"
+                                                    Value="#484848"/>
+
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+
+                            </Setter.Value>
+
+                        </Setter>
+
+                    </Style>
+
+                </Setter.Value>
+
+            </Setter>
+
+
+            <!-- ================================================= -->
+            <!-- ComboBox 完整模板 -->
+            <!-- ================================================= -->
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="ComboBox">
+
+                        <Grid>
+
+                            <!-- ================================================= -->
+                            <!-- 下拉按钮 -->
+                            <!-- ================================================= -->
+
+                            <ToggleButton
+                                x:Name="DropDownToggle"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                IsChecked="{Binding IsDropDownOpen,
+                                                    RelativeSource={RelativeSource TemplatedParent},
+                                                    Mode=TwoWay}"
+                                Focusable="False"
+                                ClickMode="Press">
+
+                                <ToggleButton.Template>
+
+                                    <ControlTemplate TargetType="ToggleButton">
+
+                                        <Border
+                                            x:Name="ToggleBorder"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                                            <Grid>
+
+                                                <!-- 当前语言 -->
+
+                                                <ContentPresenter
+                                                    Margin="8,0,28,0"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Center"
+                                                    Content="{Binding SelectionBoxItem,
+                                                                      RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                                                    ContentTemplate="{Binding SelectionBoxItemTemplate,
+                                                                              RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                                                    TextElement.Foreground="White"/>
+
+                                                <!-- 下拉箭头 -->
+
+                                                <Path
+                                                    Width="8"
+                                                    Height="5"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Center"
+                                                    Margin="0,0,9,0"
+                                                    Fill="White"
+                                                    Data="M 0 0 L 8 0 L 4 5 Z"/>
+
+                                            </Grid>
+
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+
+                                            <Trigger Property="IsMouseOver"
+                                                     Value="True">
+
+                                                <Setter TargetName="ToggleBorder"
+                                                        Property="Background"
+                                                        Value="#363636"/>
+
+                                            </Trigger>
+
+                                            <Trigger Property="IsPressed"
+                                                     Value="True">
+
+                                                <Setter TargetName="ToggleBorder"
+                                                        Property="Background"
+                                                        Value="#484848"/>
+
+                                            </Trigger>
+
+                                        </ControlTemplate.Triggers>
+
+                                    </ControlTemplate>
+
+                                </ToggleButton.Template>
+
+                            </ToggleButton>
+
+
+                            <!-- ================================================= -->
+                            <!-- 下拉 Popup -->
+                            <!-- ================================================= -->
+
+                            <Popup
+                                x:Name="PART_Popup"
+                                Placement="Bottom"
+                                PlacementTarget="{Binding ElementName=DropDownToggle}"
+                                AllowsTransparency="True"
+                                Focusable="False"
+                                IsOpen="{TemplateBinding IsDropDownOpen}">
+
+                                <Border
+                                    Background="#242424"
+                                    BorderBrush="#555555"
+                                    BorderThickness="1"
+                                    Width="{Binding ActualWidth,
+                                                    ElementName=DropDownToggle}">
+
+                                    <ScrollViewer
+                                        MaxHeight="300"
+                                        Background="#242424"
+                                        CanContentScroll="True">
+
+                                        <ItemsPresenter/>
+
+                                    </ScrollViewer>
+
+                                </Border>
+
+                            </Popup>
+
+                        </Grid>
+
+
+                        <!-- ================================================= -->
+                        <!-- ComboBox 状态 -->
+                        <!-- ================================================= -->
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+
+                                <Setter Property="Opacity"
+                                        Value="0.5"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- 按钮样式 -->
+        <!-- ===================================================== -->
+
+        <Style x:Key="LargeButtonStyle"
+               TargetType="Button">
+
+            <Setter Property="Background"
+                    Value="#242424"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="BorderBrush"
+                    Value="#555555"/>
+
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+
+            <Setter Property="FontSize"
+                    Value="15"/>
+
+            <Setter Property="FontWeight"
+                    Value="Bold"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="Button">
+
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                TextElement.Foreground="{TemplateBinding Foreground}"/>
+
+                        </Border>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+
+                    <Setter Property="Background"
+                            Value="#363636"/>
+
+                </Trigger>
+
+                <Trigger Property="IsPressed"
+                         Value="True">
+
+                    <Setter Property="Background"
+                            Value="#484848"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- DataGrid -->
+        <!-- ===================================================== -->
+
+        <Style TargetType="DataGrid">
+
+            <Setter Property="Width"
+                    Value="540"/>
+
+            <Setter Property="Background"
+                    Value="Black"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="BorderBrush"
+                    Value="#454545"/>
+
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+
+            <Setter Property="RowBackground"
+                    Value="Black"/>
+
+            <Setter Property="AlternatingRowBackground"
+                    Value="#101010"/>
+
+            <Setter Property="GridLinesVisibility"
+                    Value="Horizontal"/>
+
+            <Setter Property="HorizontalGridLinesBrush"
+                    Value="#454545"/>
+
+            <Setter Property="VerticalGridLinesBrush"
+                    Value="#454545"/>
+
+            <Setter Property="HeadersVisibility"
+                    Value="Column"/>
+
+            <Setter Property="AutoGenerateColumns"
+                    Value="False"/>
+
+            <Setter Property="IsReadOnly"
+                    Value="True"/>
+
+            <Setter Property="CanUserAddRows"
+                    Value="False"/>
+
+            <Setter Property="CanUserDeleteRows"
+                    Value="False"/>
+
+            <Setter Property="CanUserResizeRows"
+                    Value="False"/>
+
+            <Setter Property="CanUserResizeColumns"
+                    Value="False"/>
+
+            <Setter Property="CanUserSortColumns"
+                    Value="False"/>
+
+            <Setter Property="SelectionMode"
+                    Value="Single"/>
+
+            <Setter Property="SelectionUnit"
+                    Value="FullRow"/>
+
+            <Setter Property="FontSize"
+                    Value="17"/>
+
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+
+            <Setter Property="VerticalAlignment"
+                    Value="Stretch"/>
+
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                    Value="Disabled"/>
+
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                    Value="Disabled"/>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- DataGrid 行 -->
+        <!-- ===================================================== -->
+
+        <Style TargetType="DataGridRow">
+
+            <Setter Property="Background"
+                    Value="Black"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="BorderBrush"
+                    Value="Transparent"/>
+
+            <Setter Property="BorderThickness"
+                    Value="0"/>
+
+            <Setter Property="Height"
+                    Value="46"/>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsSelected"
+                         Value="True">
+
+                    <Setter Property="Background"
+                            Value="#363636"/>
+
+                    <Setter Property="Foreground"
+                            Value="White"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- 表头样式 -->
+        <!-- ===================================================== -->
+
+        <Style x:Key="CenteredHeaderStyle"
+               TargetType="DataGridColumnHeader">
+
+            <Setter Property="Background"
+                    Value="#242424"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="FontSize"
+                    Value="17"/>
+
+            <Setter Property="FontWeight"
+                    Value="Bold"/>
+
+            <Setter Property="Height"
+                    Value="46"/>
+
+            <Setter Property="Padding"
+                    Value="0"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="BorderBrush"
+                    Value="#454545"/>
+
+            <Setter Property="BorderThickness"
+                    Value="0,0,0,1"/>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- 数据文字居中 -->
+        <!-- ===================================================== -->
+
+        <Style x:Key="CenteredCellTextStyle"
+               TargetType="TextBlock">
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="FontSize"
+                    Value="17"/>
+
+            <Setter Property="HorizontalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+
+            <Setter Property="TextAlignment"
+                    Value="Center"/>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- 单元格 -->
+        <!-- ===================================================== -->
+
+        <Style TargetType="DataGridCell">
+
+            <Setter Property="Background"
+                    Value="Transparent"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="FontSize"
+                    Value="17"/>
+
+            <Setter Property="Padding"
+                    Value="0"/>
+
+            <Setter Property="BorderThickness"
+                    Value="0"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsSelected"
+                         Value="True">
+
+                    <Setter Property="Background"
+                            Value="Transparent"/>
+
+                    <Setter Property="Foreground"
+                            Value="White"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
+
+    <!-- ========================================================= -->
+    <!-- 主界面 -->
+    <!-- ========================================================= -->
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <!-- ===================================================== -->
+        <!-- 使用说明 + 语言 + 按钮 -->
+        <!-- ===================================================== -->
+
+        <Grid Grid.Row="0"
+              Margin="0,0,0,12">
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto"/>
+
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*"/>
+
+                <ColumnDefinition Width="Auto"/>
+
+            </Grid.ColumnDefinitions>
+
+
+            <!-- ================================================= -->
+            <!-- 使用说明 -->
+            <!-- ================================================= -->
+
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0,0,10,10">
+
+                <TextBlock
+                    Text="{DynamicResource InstructionsTitle}"
+                    FontSize="15"
+                    Foreground="White"
+                    Margin="0,0,0,6"/>
+
+                <TextBlock
+                    Text="{DynamicResource Instruction1}"
+                    FontSize="15"
+                    Foreground="White"
+                    TextWrapping="Wrap"
+                    Margin="0,0,0,3"/>
+
+                <TextBlock
+                    Text="{DynamicResource Instruction2}"
+                    FontSize="15"
+                    Foreground="White"
+                    TextWrapping="Wrap"
+                    Margin="0,0,0,3"/>
+
+                <TextBlock
+                    Text="{DynamicResource Instruction3}"
+                    FontSize="15"
+                    Foreground="White"
+                    TextWrapping="Wrap"/>
+
+            </StackPanel>
+
+
+            <!-- ================================================= -->
+            <!-- 语言选择 -->
+            <!-- ================================================= -->
+
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="1"
+                Orientation="Horizontal"
+                VerticalAlignment="Top">
+
+                <TextBlock
+                    x:Name="LanguageLabel"
+                    Text="{DynamicResource LanguageLabel}"
+                    Foreground="White"
+                    FontSize="15"
+                    VerticalAlignment="Center"
+                    Margin="0,4,8,0"/>
+
+                <ComboBox
+                    x:Name="LanguageComboBox"
+                    Width="120"
+                    Height="34"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource LanguageComboBoxStyle}"
+                    SelectionChanged="LanguageComboBox_SelectionChanged">
+
+                    <ComboBoxItem
+                        Content="{DynamicResource Chinese}"
+                        Tag="zh-CN"/>
+
+                    <ComboBoxItem
+                        Content="{DynamicResource English}"
+                        Tag="en-US"/>
+
+                </ComboBox>
+
+            </StackPanel>
+
+
+            <!-- ================================================= -->
+            <!-- 按钮 -->
+            <!-- ================================================= -->
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal">
+
+                <Button
+                    x:Name="RefreshButton"
+                    Content="{DynamicResource RefreshButton}"
+                    Width="180"
+                    Height="50"
+                    Style="{StaticResource LargeButtonStyle}"
+                    Click="RefreshButton_Click"
+                    Margin="0,0,14,0"/>
+
+                <Button
+                    x:Name="ExitButton"
+                    Content="{DynamicResource ExitButton}"
+                    Width="140"
+                    Height="50"
+                    Style="{StaticResource LargeButtonStyle}"
+                    Click="ExitButton_Click"/>
+
+            </StackPanel>
+
+        </Grid>
+
+
+        <!-- ===================================================== -->
+        <!-- 刷新记录 -->
+        <!-- ===================================================== -->
+
+        <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto"/>
+
+                <RowDefinition Height="Auto"/>
+
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+
+            <!-- ================================================= -->
+            <!-- 刷新记录标题 -->
+            <!-- ================================================= -->
+
+            <TextBlock
+                x:Name="RefreshRecordsTextBlock"
+                Grid.Row="0"
+                Text="{DynamicResource RefreshRecords}"
+                FontSize="18"
+                FontWeight="Bold"
+                Foreground="White"
+                Margin="0,0,0,7"/>
+
+
+            <!-- ================================================= -->
+            <!-- 错误信息 -->
+            <!-- ================================================= -->
+
+            <TextBlock
+                x:Name="ErrorLabel"
+                Grid.Row="1"
+                Text=""
+                FontSize="14"
+                Foreground="Red"
+                Visibility="Collapsed"
+                TextWrapping="Wrap"
+                Margin="0,0,0,6"/>
+
+
+            <!-- ================================================= -->
+            <!-- 日志表格 -->
+            <!-- ================================================= -->
+
+            <DataGrid
+                x:Name="LogGrid"
+                Grid.Row="2">
+
+                <DataGrid.Columns>
+
+                    <!-- ================================================= -->
+                    <!-- 刷新时间 -->
+                    <!-- ================================================= -->
+
+                    <DataGridTextColumn
+                        x:Name="RefreshTimeHeader"
+                        Header="{DynamicResource RefreshTimeHeader}"
+                        Binding="{Binding RefreshTime}"
+                        Width="170*"
+                        HeaderStyle="{StaticResource CenteredHeaderStyle}"
+                        ElementStyle="{StaticResource CenteredCellTextStyle}"/>
+
+
+                    <!-- ================================================= -->
+                    <!-- 类型 -->
+                    <!-- ================================================= -->
+
+                    <DataGridTextColumn
+                        x:Name="TypeHeader"
+                        Header="{DynamicResource TypeHeader}"
+                        Binding="{Binding RefreshType}"
+                        Width="120*"
+                        HeaderStyle="{StaticResource CenteredHeaderStyle}"
+                        ElementStyle="{StaticResource CenteredCellTextStyle}"/>
+
+
+                    <!-- ================================================= -->
+                    <!-- 下一次刷新时间 -->
+                    <!-- ================================================= -->
+
+                    <DataGridTextColumn
+                        x:Name="NextRefreshTimeHeader"
+                        Header="{DynamicResource NextRefreshTimeHeader}"
+                        Binding="{Binding NextRefreshTime}"
+                        Width="250*"
+                        HeaderStyle="{StaticResource CenteredHeaderStyle}"
+                        ElementStyle="{StaticResource CenteredCellTextStyle}"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

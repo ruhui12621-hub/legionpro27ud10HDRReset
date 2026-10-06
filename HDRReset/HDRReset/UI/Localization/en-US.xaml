@@ -1,0 +1,110 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <sys:String x:Key="WindowTitle">
+        HDR Auto Refresh - Lenovo Legion Pro27UD10
+    </sys:String>
+
+<sys:String x:Key="InstructionsTitle">Instructions</sys:String>
+
+<sys:String x:Key="Instruction1">• HDR is automatically refreshed every 30 minutes.</sys:String>
+
+<sys:String x:Key="Instruction2">• Press the number 1 key to refresh HDR immediately and restart the 30-minute timer.</sys:String>
+
+<sys:String x:Key="Instruction3">• This program is only intended for the Lenovo Legion Pro 27-UD10.</sys:String>
+
+    <sys:String x:Key="RefreshButton">
+        Refresh HDR
+    </sys:String>
+
+    <sys:String x:Key="ExitButton">
+        Exit
+    </sys:String>
+
+    <sys:String x:Key="LanguageLabel">
+        Language
+    </sys:String>
+
+    <sys:String x:Key="Chinese">
+        中文
+    </sys:String>
+
+    <sys:String x:Key="English">
+        English
+    </sys:String>
+
+    <sys:String x:Key="RefreshRecords">
+        Refresh History
+    </sys:String>
+
+    <sys:String x:Key="RefreshTimeHeader">
+        Refresh Time
+    </sys:String>
+
+    <sys:String x:Key="TypeHeader">
+        Type
+    </sys:String>
+
+    <sys:String x:Key="NextRefreshTimeHeader">
+        Next Refresh
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeStartup">
+        Startup
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeAutomatic">
+        Automatic
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeManual">
+        Manual
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeUnknown">
+        Unknown
+    </sys:String>
+
+    <sys:String x:Key="ErrorPrefix">
+        Error:
+    </sys:String>
+
+    <sys:String x:Key="ErrorUnknown">
+        HDR refresh failed, but no specific error information was available.
+    </sys:String>
+
+    <sys:String x:Key="ErrorGetPhysicalMonitorCountFailed">
+        Failed to get the number of physical monitors.
+    </sys:String>
+
+    <sys:String x:Key="ErrorGetPhysicalMonitorFailed">
+        Failed to get the physical monitor.
+    </sys:String>
+
+    <sys:String x:Key="ErrorSetHdrPhotoFailed">
+        Failed to set HDR Photo on monitor "{0}".
+    </sys:String>
+
+    <sys:String x:Key="ErrorNoPhysicalMonitor">
+        No usable physical monitor was found.
+    </sys:String>
+
+    <sys:String x:Key="ErrorUnexpectedException">
+        An unexpected error occurred during HDR refresh.
+    </sys:String>
+
+    <sys:String x:Key="UnknownMonitor">
+        Unknown Monitor
+    </sys:String>
+
+    <sys:String x:Key="Win32ErrorCode">
+        Win32 error code: {0}
+    </sys:String>
+
+    <sys:String x:Key="VcpInformation">
+        VCP=0x{0}, Value=0x{1}.
+    </sys:String>
+
+</ResourceDictionary>
