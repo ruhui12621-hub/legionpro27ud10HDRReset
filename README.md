@@ -39,5 +39,3 @@ Other monitors may use different DDC/CI commands. Compatibility with other model
 ## Disclaimer
 
 This is a **workaround**, not an official Lenovo fix.
-
-Use it at your own discretion. If you encounter problems or find that it works on another monitor, feel free to open an Issue.
