@@ -22,7 +22,8 @@ It does **not** toggle Windows HDR or change the monitor's brightness setting.
 Extract the ZIP and run `Install.bat`.
 
 The installer creates a Windows startup entry and launches HDRReset.
-
+> [!IMPORTANT]
+> Enable **DDC/CI** in your monitor's OSD settings before running HDRReset.
 ## Compatibility
 
 **Tested on:**
