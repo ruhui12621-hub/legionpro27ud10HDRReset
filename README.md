@@ -39,11 +39,13 @@ Other monitors may use different DDC/CI commands. Compatibility with other model
 
 ## Uninstall
 
-Run the following command in **PowerShell** to remove HDRReset from startup and close the running program. Then manually delete the entire extracted program folder.
+1. Run the following command in **PowerShell** to remove HDRReset from startup and close the running program.
 
 ```powershell
 Remove-Item -LiteralPath (Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\Programs\Startup\HDRReset.lnk') -Force -ErrorAction SilentlyContinue; Stop-Process -Name HDRReset -Force -ErrorAction SilentlyContinue
 ```
+
+2. Manually delete the entire extracted program folder.
 
 ## Disclaimer
 
