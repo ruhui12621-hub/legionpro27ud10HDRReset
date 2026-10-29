@@ -43,7 +43,8 @@ This is a **workaround**, not an official Lenovo fix.
 
 ## Uninstall
 
-Run the following command in PowerShell to remove HDRReset from Windows startup and force-close the running program. After executing the command, manually delete the entire folder containing the extracted program files.
+Run the following command in **PowerShell** to remove HDRReset from startup and close the running program. Then manually delete the entire extracted program folder.
 
 ```powershell
 Remove-Item -LiteralPath (Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\Programs\Startup\HDRReset.lnk') -Force -ErrorAction SilentlyContinue; Stop-Process -Name HDRReset -Force -ErrorAction SilentlyContinue
+```
