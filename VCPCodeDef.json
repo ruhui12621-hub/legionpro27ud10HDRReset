@@ -349,6 +349,10 @@
               {
                 "value": "0x0F",
                 "define": "HDR DCI-P3"
+              },
+              {
+                "value": "0x10",
+                "define": "TB400"
               }
             ]
           }
@@ -3595,6 +3599,10 @@
               {
                 "value": "0x10",
                 "define": "16:10"
+              },
+              {
+                "value": "0x0C",
+                "define": "5:4"
               }
             ]
           }
