@@ -56,7 +56,11 @@ This is a **workaround**, not an official Lenovo fix.
 For a version with additional features, download [HDRReset_Improved.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.2/HDRReset_Improved.zip).
 
 <details>
-<summary>可选阅读：个人使用设置</summary>
+<summary>
+  
+## 个人使用设置
+
+</summary>
 
 Windows 设置：
 
