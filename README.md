@@ -54,3 +54,6 @@ This is a **workaround**, not an official Lenovo fix.
 ## Update
 
 For a version with additional features, download [HDRReset_Improved.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.2/HDRReset_Improved.zip).
+
+## My Windows Display Settings
+Settings → System → Display → HDR → SDR content brightness: 80
