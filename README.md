@@ -55,14 +55,19 @@ This is a **workaround**, not an official Lenovo fix.
 
 For a version with additional features, download [HDRReset_Improved.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.2/HDRReset_Improved.zip).
 
-
 <details>
-<summary><strong>个人使用设置（可选阅读）</strong></summary>
+<summary><strong>
+  
+  个人使用设置（可选阅读）
+  
+  </strong></summary>
 
 Windows 设置：
+
 系统 > 屏幕 > HDR > SDR 内容亮度 > 80
 
 显示器OSD:
+
 Dolby Vision : 开
 
 </details>
