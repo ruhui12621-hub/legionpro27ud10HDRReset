@@ -58,7 +58,7 @@ For a version with additional features, download [HDRReset_Improved.zip](https:/
 
 <details>
 <summary><strong>
-我的使用设置（可选阅读） 
+我的显示设置（可选阅读） 
   </strong></summary>
 
 Windows 设置：
