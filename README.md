@@ -63,7 +63,7 @@ For a version with additional features, download [HDRReset_Improved.zip](https:/
 
 Windows 设置：
 
-系统 > 屏幕 > HDR > SDR 内容亮度 : 80
+系统 > 屏幕 > HDR > SDR 内容亮度 : 70
 
 OBS Studio:
 
