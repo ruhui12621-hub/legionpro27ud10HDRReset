@@ -58,12 +58,16 @@ For a version with additional features, download [HDRReset_Improved.zip](https:/
 
 <details>
 <summary><strong>
-    个人使用设置（可选阅读） 
+我的使用设置（可选阅读） 
   </strong></summary>
 
 Windows 设置：
 
 系统 > 屏幕 > HDR > SDR 内容亮度 : 80
+
+OBS Studio:
+
+文件 > 设置 > 高级 > SDR白电平 : 400 nits
 
 显示器OSD:
 
