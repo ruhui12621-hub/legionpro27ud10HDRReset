@@ -65,6 +65,8 @@ Windows 设置：
 
 系统 > 屏幕 > HDR > SDR 内容亮度 : 70
 
+ > 自动HDR : 关
+
 OBS Studio:
 
 文件 > 设置 > 高级 > SDR白电平 : 400 nits
@@ -73,6 +75,6 @@ OBS Studio:
 
 Dolby Vision : 开
 
-独占全屏游戏启用hdr会退出杜比视界，使用无边框窗口
+独占全屏游戏启用HDR会退出杜比视界，使用无边框窗口
 
 </details>
