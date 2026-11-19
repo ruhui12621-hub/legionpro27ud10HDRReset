@@ -63,10 +63,9 @@ For a version with additional features, download [HDRReset_Improved.zip](https:/
 
 Windows 设置：
 
-系统 > 屏幕 > HDR
-
 <table>
   <tr>
+    <td rowspan="2" valign="top">系统 > 屏幕 > HDR</td>
     <td>SDR 内容亮度：70</td>
   </tr>
   <tr>
