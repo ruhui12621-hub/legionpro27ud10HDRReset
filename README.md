@@ -62,10 +62,16 @@ For a version with additional features, download [HDRReset_Improved.zip](https:/
   </strong></summary>
 
 Windows 设置：
-
-系统 > 屏幕 > HDR > SDR 内容亮度 : 70
-
-------------------自动HDR : 关
+<table>
+  <tr>
+    <td>系统 > 屏幕 > HDR ></td>
+    <td>SDR 内容亮度：70</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>自动 HDR：关</td>
+  </tr>
+</table>
 
 OBS Studio:
 
