@@ -65,7 +65,7 @@ Windows 设置：
 
 系统 > 屏幕 > HDR > SDR 内容亮度 : 70
 
- > 自动HDR : 关
+自动HDR : 关
 
 OBS Studio:
 
