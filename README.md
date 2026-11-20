@@ -51,11 +51,6 @@ Remove-Item -LiteralPath (Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\P
 
 This is a **workaround**, not an official Lenovo fix.
 
-## Update
-
-For a version with additional features, download [HDRReset_Improved.zip](https://github.com/ruhui12621-hub/legionpro27ud10HDRReset/releases/download/v1.2/HDRReset_Improved.zip).
-
-
 <details>
 <summary><strong>
 我的显示设置（可选阅读） 
