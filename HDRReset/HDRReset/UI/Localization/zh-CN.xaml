@@ -1,0 +1,129 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <sys:String x:Key="WindowTitle">
+        HDR 自动刷新 - 适用于 Legion Pro27UD10
+    </sys:String>
+
+<sys:String x:Key="InstructionsTitle">使用说明</sys:String>
+
+<sys:String x:Key="Instruction1">• 默认每 30 分钟自动刷新 HDR，可在下方调整刷新间隔。</sys:String>
+
+<sys:String x:Key="Instruction2">• 按数字键 1 可立即刷新 HDR，并重新计时。</sys:String>
+
+<sys:String x:Key="Instruction3">• 请确认显示器 OSD 菜单中已启用 DDC/CI。</sys:String>
+
+<sys:String x:Key="Instruction4">• 本程序仅适用于 Lenovo Legion Pro 27-UD10。</sys:String>
+
+    <sys:String x:Key="RefreshButton">
+        刷新 HDR
+    </sys:String>
+
+    <sys:String x:Key="ExitButton">
+        结束程序
+    </sys:String>
+
+    <sys:String x:Key="LanguageLabel">
+        语言
+    </sys:String>
+
+    <sys:String x:Key="HdrModeLabel">
+        刷新模式
+    </sys:String>
+
+    <sys:String x:Key="RefreshIntervalLabel">刷新间隔</sys:String>
+    <sys:String x:Key="MinutesUnit">分钟</sys:String>
+    <sys:String x:Key="SecondsUnit">秒</sys:String>
+    <sys:String x:Key="ApplyButton">应用</sys:String>
+    <sys:String x:Key="RefreshIntervalValidationTitle">输入无效</sys:String>
+    <sys:String x:Key="InvalidRefreshInterval">刷新间隔输入无效。分钟范围：0–99；秒范围：0–59；总间隔不得少于 3 秒。</sys:String>
+
+    <sys:String x:Key="HdrModePhoto">HDR Photo</sys:String>
+    <sys:String x:Key="HdrModeMovie">HDR Movie</sys:String>
+    <sys:String x:Key="HdrModeGame">HDR Game</sys:String>
+    <sys:String x:Key="HdrModeTB400">TB400</sys:String>
+    <sys:String x:Key="HdrModeAuto">Auto</sys:String>
+
+    <sys:String x:Key="Chinese">
+        中文
+    </sys:String>
+
+    <sys:String x:Key="English">
+        English
+    </sys:String>
+
+    <sys:String x:Key="RefreshRecords">
+        刷新记录
+    </sys:String>
+
+    <sys:String x:Key="RefreshTimeHeader">
+        刷新时间
+    </sys:String>
+
+    <sys:String x:Key="TypeHeader">
+        类型
+    </sys:String>
+
+    <sys:String x:Key="NextRefreshTimeHeader">
+        下一次刷新时间
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeStartup">
+        启动
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeAutomatic">
+        自动
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeManual">
+        手动
+    </sys:String>
+
+    <sys:String x:Key="RefreshTypeUnknown">
+        未知
+    </sys:String>
+
+    <sys:String x:Key="ErrorPrefix">
+        错误：
+    </sys:String>
+
+    <sys:String x:Key="ErrorUnknown">
+        HDR 刷新失败，但没有获取到具体错误信息。
+    </sys:String>
+
+    <sys:String x:Key="ErrorGetPhysicalMonitorCountFailed">
+        获取物理显示器数量失败。
+    </sys:String>
+
+    <sys:String x:Key="ErrorGetPhysicalMonitorFailed">
+        获取物理显示器失败。
+    </sys:String>
+
+    <sys:String x:Key="ErrorSetHdrModeFailed">
+        显示器「{0}」设置 HDR 模式失败。
+    </sys:String>
+
+    <sys:String x:Key="ErrorNoPhysicalMonitor">
+        没有找到可用的物理显示器。
+    </sys:String>
+
+    <sys:String x:Key="ErrorUnexpectedException">
+        HDR 刷新过程中发生未知异常。
+    </sys:String>
+
+    <sys:String x:Key="UnknownMonitor">
+        未知显示器
+    </sys:String>
+
+    <sys:String x:Key="Win32ErrorCode">
+        Win32 错误代码：{0}
+    </sys:String>
+
+    <sys:String x:Key="VcpInformation">
+        VCP=0x{0}，Value=0x{1}。
+    </sys:String>
+
+</ResourceDictionary>
